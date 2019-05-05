@@ -1,13 +1,18 @@
+/*
+20190504
+有人直接使用向量数组对其进行归类v[num%5].push_back(num);然后对每个向量进行处理
+*/
 #include <iostream>
 #include <vector>
 using namespace std;
 int main(){
 	int temp,i,N;
 	cin >> N;
-	vector<int> v;//�����vector<int> v(N)������Ǵ�N��0��ʼ�ټ��������ֵ�2*N������ 
-	while(cin>>temp) v.push_back(temp);
+	vector<int> v;//如果是vector<int> v(N)则后续是从N个0后开始再继续加数字到2*N个数字 
+	while(cin>>temp) v.push_back(temp); //更加适用于没有输入数字个数的情况
+	//for(i=0;i<N;i++) v.push_back(temp);//应该是更好的选择，因为已经确认要输入数字的个数了
 	int a1=0,a2=0,a2_flag=1,a3=0,a4_sum=0,a4_num=0,a5=-1;
-	int a1_num=0,a2_num=0,a5_num=0;//���������=0Ϊ�����ڣ����N 
+	int a1_num=0,a2_num=0,a5_num=0;//计算个数，=0为不存在，输出N 
 //	for(i=0;i<v.size();i++) cout << v[i] <<" ";
 	for(i=0;i<v.size();i++){
 		switch(v[i]%5){
