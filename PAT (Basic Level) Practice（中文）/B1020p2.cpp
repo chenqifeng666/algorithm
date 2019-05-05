@@ -25,7 +25,7 @@ int main(){
 	
 	//贪心思维
 	int remain=sum;
-	double profit=0;
+	double profit=0.0;
 	/*这部分有问题，可能存在供不应求的情况 
 	for(i=0;remain>0;i++){
 		temp=remain-m[i].amout;
